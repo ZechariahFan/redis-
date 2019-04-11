@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--加载映射文件的约束文档-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--设置映射配置
+  namespace：实现的接口的全称-->
+<mapper namespace="com.dj.demo.dao.MsgDao">
+    <insert id="addMsge" parameterType="com.dj.demo.model.Msg" useGeneratedKeys="true" keyProperty="id">
+        insert into tb_msg(msg,name) values(#{msg},#{name})
+    </insert>
+    <!-- 查询
+    resultType:查询结果集的每行的数据类型 -->
+    <select id="queryMsg" resultType="com.dj.demo.model.Msg">
+        select * from tb_msg
+    </select>
+</mapper>
